@@ -15,8 +15,8 @@ function executeOrderRequest(order, executeId, accountData, accountConfig) {
             referer: 'https://trader.degiro.nl/trader/',
         };
         // tslint:disable-next-line: max-line-length
-        var uri = "https://trader.degiro.nl/trading/secure/v5/order/" + executeId + ";jsessionid=" + accountConfig.data.sessionId + "?intAccount=" + accountData.data.intAccount + "&sessionId=" + accountConfig.data.sessionId;
-        utils_1.debug(uri, requestOptions);
+        var uri = "https://trader.degiro.nl/trading/secure/v5/order/".concat(executeId, ";jsessionid=").concat(accountConfig.data.sessionId, "?intAccount=").concat(accountData.data.intAccount, "&sessionId=").concat(accountConfig.data.sessionId);
+        (0, utils_1.debug)(uri, requestOptions);
         fetch(uri, requestOptions)
             .then(function (res) { return res.json(); })
             .then(function (res) {

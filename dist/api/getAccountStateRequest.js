@@ -11,20 +11,20 @@ function getAccountStateRequest(accountData, accountConfig, config) {
         // Create params to get orders by types
         var from = config.from, to = config.to;
         var params = '';
-        params += "fromDate=" + encodeURIComponent(from) + "&";
-        params += "toDate=" + encodeURIComponent(to) + "&";
-        params += "intAccount=" + accountData.data.intAccount + "&";
-        params += "sessionId=" + accountConfig.data.sessionId;
+        params += "fromDate=".concat(encodeURIComponent(from), "&");
+        params += "toDate=".concat(encodeURIComponent(to), "&");
+        params += "intAccount=".concat(accountData.data.intAccount, "&");
+        params += "sessionId=".concat(accountConfig.data.sessionId);
         var requestOptions = {
             headers: {
-                Cookie: "JSESSIONID=" + accountConfig.data.sessionId + ";",
+                Cookie: "JSESSIONID=".concat(accountConfig.data.sessionId, ";"),
             },
             credentials: 'include',
             referer: 'https://trader.degiro.nl/trader/',
         };
         // Do the request to get a account config data
-        var uri = "" + accountConfig.data.reportingUrl + GET_ACCOUNT_STATE_PATH + "?" + params;
-        utils_1.debug("Making request to " + uri);
+        var uri = "".concat(accountConfig.data.reportingUrl).concat(GET_ACCOUNT_STATE_PATH, "?").concat(params);
+        (0, utils_1.debug)("Making request to ".concat(uri));
         fetch(uri, requestOptions)
             .then(function (res) { return res.json(); })
             .then(function (res) {

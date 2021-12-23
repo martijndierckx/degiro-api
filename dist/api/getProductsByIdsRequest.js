@@ -13,7 +13,7 @@ function getProductsByIdsRequest(ids, accountData, accountConfig) {
             credentials: 'include',
             referer: 'https://trader.degiro.nl/trader/',
         };
-        fetch(accountConfig.data.productSearchUrl + "v5/products/info?intAccount=" + accountData.data.intAccount + "&sessionId=" + accountConfig.data.sessionId, requestOptions)
+        fetch("".concat(accountConfig.data.productSearchUrl, "v5/products/info?intAccount=").concat(accountData.data.intAccount, "&sessionId=").concat(accountConfig.data.sessionId), requestOptions)
             .then(function (res) { return res.json(); })
             .then(function (res) { return resolve(res.data); })
             .catch(reject);

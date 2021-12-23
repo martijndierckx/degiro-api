@@ -6,7 +6,9 @@ import {
   DeGiroProducTypes,
   DeGiroSort,
   PORTFOLIO_POSITIONS_TYPE_ENUM,
-} from './DeGiroEnums'
+  GetPriceResolution,
+  GetPricePeriod,
+} from "./DeGiroEnums";
 
 export {
   DEGIRO_API_PATHS,
@@ -16,4 +18,6 @@ export {
   DeGiroProducTypes,
   DeGiroSort,
   PORTFOLIO_POSITIONS_TYPE_ENUM,
-}
+  GetPriceResolution,
+  GetPricePeriod,
+};

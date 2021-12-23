@@ -1,3 +1,3 @@
-import { DEGIRO_API_PATHS, DeGiroActions, DeGiroMarketOrderTypes, DeGiroTimeTypes, DeGiroProducTypes, DeGiroSort, PORTFOLIO_POSITIONS_TYPE_ENUM } from './DeGiroEnums';
-export { DEGIRO_API_PATHS, DeGiroActions, DeGiroMarketOrderTypes, DeGiroTimeTypes, DeGiroProducTypes, DeGiroSort, PORTFOLIO_POSITIONS_TYPE_ENUM, };
+import { DEGIRO_API_PATHS, DeGiroActions, DeGiroMarketOrderTypes, DeGiroTimeTypes, DeGiroProducTypes, DeGiroSort, PORTFOLIO_POSITIONS_TYPE_ENUM, GetPriceResolution, GetPricePeriod } from "./DeGiroEnums";
+export { DEGIRO_API_PATHS, DeGiroActions, DeGiroMarketOrderTypes, DeGiroTimeTypes, DeGiroProducTypes, DeGiroSort, PORTFOLIO_POSITIONS_TYPE_ENUM, GetPriceResolution, GetPricePeriod, };
 //# sourceMappingURL=index.d.ts.map

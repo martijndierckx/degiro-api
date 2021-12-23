@@ -10,17 +10,22 @@ function getAccountConfigRequest(sessionId) {
     return new Promise(function (resolve, reject) {
         var requestOptions = {
             headers: {
-                Cookie: "JSESSIONID=" + sessionId + ";",
+                Cookie: "JSESSIONID=".concat(sessionId, ";"),
             },
             credentials: 'include',
             referer: 'https://trader.degiro.nl/trader/',
         };
         // Do the request to get a account config data
-        utils_1.debug("Making request to " + BASE_API_URL + GET_ACCOUNT_CONFIG_PATH + " with JSESSIONID: " + sessionId);
+        (0, utils_1.debug)("Making request to ".concat(BASE_API_URL).concat(GET_ACCOUNT_CONFIG_PATH, " with JSESSIONID: ").concat(sessionId));
         fetch(BASE_API_URL + GET_ACCOUNT_CONFIG_PATH, requestOptions)
-            .then(function (res) { return res.json(); })
             .then(function (res) {
-            utils_1.debug('Response:\n', JSON.stringify(res, null, 2));
+            if (!res.ok) {
+                reject(res.statusText);
+            }
+            return res.json();
+        })
+            .then(function (res) {
+            (0, utils_1.debug)('Response:\n', JSON.stringify(res, null, 2));
             resolve(res);
         })
             .catch(reject);

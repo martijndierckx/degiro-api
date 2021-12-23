@@ -9,8 +9,8 @@ var utils_1 = require("../utils");
 function logoutRequest(accountData, accountConfig) {
     return new Promise(function (resolve, reject) {
         // Do the request to get a session
-        var url = "" + BASE_API_URL + LOGOUT_URL_PATH + ";jsessionid=" + accountConfig.data.sessionId + "?intAccount=" + accountData.data.intAccount + "&sessionId=" + accountConfig.data.sessionId;
-        utils_1.debug("Making request to " + url);
+        var url = "".concat(BASE_API_URL).concat(LOGOUT_URL_PATH, ";jsessionid=").concat(accountConfig.data.sessionId, "?intAccount=").concat(accountData.data.intAccount, "&sessionId=").concat(accountConfig.data.sessionId);
+        (0, utils_1.debug)("Making request to ".concat(url));
         fetch(url)
             .then(function (res) {
             if (res.status === 200)

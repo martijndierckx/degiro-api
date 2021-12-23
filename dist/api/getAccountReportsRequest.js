@@ -23,21 +23,21 @@ function getAccountReportsRequest(accountData, accountConfig) {
     return new Promise(function (resolve, reject) {
         var requestOptions = {
             headers: {
-                Cookie: "JSESSIONID=" + accountConfig.data.sessionId + ";",
+                Cookie: "JSESSIONID=".concat(accountConfig.data.sessionId, ";"),
             },
             credentials: 'include',
             referer: 'https://trader.degiro.nl/trader/',
         };
         // Do the request to get a account config data
-        var uri = "" + accountConfig.data.paUrl + GET_ACCOUNT_REPORTS_PATH + "?intAccount=" + accountData.data.intAccount + "&sessionId=" + accountConfig.data.sessionId;
-        utils_1.debug("Making request to " + uri);
+        var uri = "".concat(accountConfig.data.paUrl).concat(GET_ACCOUNT_REPORTS_PATH, "?intAccount=").concat(accountData.data.intAccount, "&sessionId=").concat(accountConfig.data.sessionId);
+        (0, utils_1.debug)("Making request to ".concat(uri));
         fetch(uri, requestOptions)
             .then(function (res) { return res.json(); })
             .then(function (res) {
-            utils_1.debug('Response:\n', JSON.stringify(res, null, 2));
+            (0, utils_1.debug)('Response:\n', JSON.stringify(res, null, 2));
             var data = res.data;
             // Añadimos la URL de descarga del archivo para que sea más facil en cliente
-            data = data.map(function (report) { return (__assign(__assign({}, report), { uri: generateReportURIFromID_1.generateReportURIFromID(report.id, accountData, accountConfig) })); });
+            data = data.map(function (report) { return (__assign(__assign({}, report), { uri: (0, generateReportURIFromID_1.generateReportURIFromID)(report.id, accountData, accountConfig) })); });
             resolve(data);
         })
             .catch(reject);

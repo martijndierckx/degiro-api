@@ -13,7 +13,9 @@ export declare enum DEGIRO_API_PATHS {
     GET_WEB_SETTINGS_PATH = "settings/web",
     GET_WEB_USER_SETTINGS_PATH = "settings/user",
     GET_ACCOUNT_REPORTS_PATH = "document/list/report",
-    STOCKS_SEARCH_PATH = "v5/stocks"
+    STOCKS_SEARCH_PATH = "v5/stocks",
+    VWD_BASE_API_URL = "https://charting.vwdservices.com/hchart/",
+    VWD_GET_PRICE_PATH = "v1/deGiro/data.js"
 }
 export declare enum DeGiroActions {
     BUY = "BUY",
@@ -54,5 +56,28 @@ export declare enum GET_ORDERS_TYPES {
     ACTIVE = "orders",
     HISTORICAL = "historicalOrders",
     TRANSACTIONS = "transactions"
+}
+export declare enum GetPriceResolution {
+    OneSecond = "PT1S",
+    FifteenSeconds = "PT15S",
+    ThirtySeconds = "PT30S",
+    OneMinute = "PT1M",
+    FiveMinutes = "PT5M",
+    FifteenMinutes = "PT15M",
+    ThirtyMinutes = "PT30M",
+    SixtyMinutes = "PT60M",
+    OneHour = "PT1H",
+    OneDay = "PT1D"
+}
+export declare enum GetPricePeriod {
+    OneDay = "P1D",
+    OneWeek = "P1W",
+    OneMonth = "P1M",
+    ThreeMonths = "P3M",
+    SixMonths = "P6M",
+    OneYear = "P1Y",
+    ThreeYears = "P3Y",
+    FiveYYears = "P5Y",
+    Max = "P50Y"
 }
 //# sourceMappingURL=DeGiroEnums.d.ts.map

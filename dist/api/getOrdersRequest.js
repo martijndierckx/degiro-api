@@ -12,16 +12,16 @@ function getOrdersRequest(accountData, accountConfig, config) {
         var active = config.active, lastTransactions = config.lastTransactions;
         var params = '';
         if (active)
-            params += DeGiroEnums_1.GET_ORDERS_TYPES.ACTIVE + "=0&";
+            params += "".concat(DeGiroEnums_1.GET_ORDERS_TYPES.ACTIVE, "=0&");
         if (lastTransactions)
-            params += DeGiroEnums_1.GET_ORDERS_TYPES.TRANSACTIONS + "=0&";
+            params += "".concat(DeGiroEnums_1.GET_ORDERS_TYPES.TRANSACTIONS, "=0&");
         var requestOptions = {
             credentials: 'include',
             referer: 'https://trader.degiro.nl/trader/',
         };
         // Do the request to get a account config data
-        var uri = accountConfig.data.tradingUrl + "v5/update/" + accountData.data.intAccount + ";jsessionid=" + accountConfig.data.sessionId + "?" + params;
-        utils_1.debug("Making request to " + uri);
+        var uri = "".concat(accountConfig.data.tradingUrl, "v5/update/").concat(accountData.data.intAccount, ";jsessionid=").concat(accountConfig.data.sessionId, "?").concat(params);
+        (0, utils_1.debug)("Making request to ".concat(uri));
         fetch(uri, requestOptions)
             .then(function (res) { return res.json(); })
             .then(function (res) {

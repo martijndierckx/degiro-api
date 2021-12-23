@@ -17,8 +17,8 @@ function createOrderRequest(order, accountData, accountConfig) {
             credentials: 'include',
             referer: 'https://trader.degiro.nl/trader/',
         };
-        var uri = "" + accountConfig.data.tradingUrl + CREATE_ORDER_PATH + ";jsessionid=" + accountConfig.data.sessionId + "?intAccount=" + accountData.data.intAccount + "&sessionId=" + accountConfig.data.sessionId;
-        utils_1.debug(uri, requestOptions);
+        var uri = "".concat(accountConfig.data.tradingUrl).concat(CREATE_ORDER_PATH, ";jsessionid=").concat(accountConfig.data.sessionId, "?intAccount=").concat(accountData.data.intAccount, "&sessionId=").concat(accountConfig.data.sessionId);
+        (0, utils_1.debug)(uri, requestOptions);
         fetch(uri, requestOptions)
             .then(function (res) { return res.json(); })
             .then(function (res) {

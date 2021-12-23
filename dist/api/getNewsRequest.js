@@ -49,20 +49,20 @@ function getNewsRequest(options, accountData, accountConfig) {
                 case 0:
                     latest = options.latest, top = options.top, _a = options.latestOffset, latestOffset = _a === void 0 ? 0 : _a, _b = options.latestLimit, latestLimit = _b === void 0 ? 20 : _b, _c = options.languages, languages = _c === void 0 ? 'es' : _c;
                     params = '';
-                    params += "offset=" + latestOffset + "&";
-                    params += "limit=" + latestLimit + "&";
-                    params += "languages=" + languages + "&";
-                    params += "intAccount=" + accountData.data.intAccount + "&";
-                    params += "sessionId=" + accountConfig.data.sessionId;
+                    params += "offset=".concat(latestOffset, "&");
+                    params += "limit=".concat(latestLimit, "&");
+                    params += "languages=".concat(languages, "&");
+                    params += "intAccount=".concat(accountData.data.intAccount, "&");
+                    params += "sessionId=".concat(accountConfig.data.sessionId);
                     requestOptions = {
                         headers: {
-                            Cookie: "JSESSIONID=" + accountConfig.data.sessionId + ";",
+                            Cookie: "JSESSIONID=".concat(accountConfig.data.sessionId, ";"),
                         },
                         credentials: 'include',
                         referer: 'https://trader.degiro.nl/trader/',
                     };
-                    latestNewsURI = "" + accountConfig.data.companiesServiceUrl + GET_LATESTS_NEWS_PATH + "?" + params;
-                    topNewsURI = "" + accountConfig.data.companiesServiceUrl + GET_TOP_NEWS_PATH + "?" + params;
+                    latestNewsURI = "".concat(accountConfig.data.companiesServiceUrl).concat(GET_LATESTS_NEWS_PATH, "?").concat(params);
+                    topNewsURI = "".concat(accountConfig.data.companiesServiceUrl).concat(GET_TOP_NEWS_PATH, "?").concat(params);
                     result = {
                         latest: {
                             items: [],

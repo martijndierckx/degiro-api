@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GET_ORDERS_TYPES = exports.PORTFOLIO_POSITIONS_TYPE_ENUM = exports.DeGiroSort = exports.DeGiroProducTypes = exports.DeGiroTimeTypes = exports.DeGiroMarketOrderTypes = exports.DeGiroActions = exports.DEGIRO_API_PATHS = void 0;
+exports.GetPricePeriod = exports.GetPriceResolution = exports.GET_ORDERS_TYPES = exports.PORTFOLIO_POSITIONS_TYPE_ENUM = exports.DeGiroSort = exports.DeGiroProducTypes = exports.DeGiroTimeTypes = exports.DeGiroMarketOrderTypes = exports.DeGiroActions = exports.DEGIRO_API_PATHS = void 0;
 var DEGIRO_API_PATHS;
 (function (DEGIRO_API_PATHS) {
     DEGIRO_API_PATHS["BASE_API_URL"] = "https://trader.degiro.nl/";
@@ -18,6 +18,8 @@ var DEGIRO_API_PATHS;
     DEGIRO_API_PATHS["GET_WEB_USER_SETTINGS_PATH"] = "settings/user";
     DEGIRO_API_PATHS["GET_ACCOUNT_REPORTS_PATH"] = "document/list/report";
     DEGIRO_API_PATHS["STOCKS_SEARCH_PATH"] = "v5/stocks";
+    DEGIRO_API_PATHS["VWD_BASE_API_URL"] = "https://charting.vwdservices.com/hchart/";
+    DEGIRO_API_PATHS["VWD_GET_PRICE_PATH"] = "v1/deGiro/data.js";
 })(DEGIRO_API_PATHS = exports.DEGIRO_API_PATHS || (exports.DEGIRO_API_PATHS = {}));
 var DeGiroActions;
 (function (DeGiroActions) {
@@ -67,4 +69,29 @@ var GET_ORDERS_TYPES;
     GET_ORDERS_TYPES["HISTORICAL"] = "historicalOrders";
     GET_ORDERS_TYPES["TRANSACTIONS"] = "transactions";
 })(GET_ORDERS_TYPES = exports.GET_ORDERS_TYPES || (exports.GET_ORDERS_TYPES = {}));
+var GetPriceResolution;
+(function (GetPriceResolution) {
+    GetPriceResolution["OneSecond"] = "PT1S";
+    GetPriceResolution["FifteenSeconds"] = "PT15S";
+    GetPriceResolution["ThirtySeconds"] = "PT30S";
+    GetPriceResolution["OneMinute"] = "PT1M";
+    GetPriceResolution["FiveMinutes"] = "PT5M";
+    GetPriceResolution["FifteenMinutes"] = "PT15M";
+    GetPriceResolution["ThirtyMinutes"] = "PT30M";
+    GetPriceResolution["SixtyMinutes"] = "PT60M";
+    GetPriceResolution["OneHour"] = "PT1H";
+    GetPriceResolution["OneDay"] = "PT1D";
+})(GetPriceResolution = exports.GetPriceResolution || (exports.GetPriceResolution = {}));
+var GetPricePeriod;
+(function (GetPricePeriod) {
+    GetPricePeriod["OneDay"] = "P1D";
+    GetPricePeriod["OneWeek"] = "P1W";
+    GetPricePeriod["OneMonth"] = "P1M";
+    GetPricePeriod["ThreeMonths"] = "P3M";
+    GetPricePeriod["SixMonths"] = "P6M";
+    GetPricePeriod["OneYear"] = "P1Y";
+    GetPricePeriod["ThreeYears"] = "P3Y";
+    GetPricePeriod["FiveYYears"] = "P5Y";
+    GetPricePeriod["Max"] = "P50Y";
+})(GetPricePeriod = exports.GetPricePeriod || (exports.GetPricePeriod = {}));
 //# sourceMappingURL=DeGiroEnums.js.map

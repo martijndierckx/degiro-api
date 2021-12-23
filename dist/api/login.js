@@ -29,20 +29,20 @@ function loginRequest(params) {
             referer: 'https://trader.degiro.nl/trader/',
         };
         // Do the request to get a session
-        utils_1.debug("Making request to " + BASE_API_URL + LOGIN_URL_PATH + " with options:");
-        utils_1.debug(JSON.stringify(requestOptions, null, 2));
-        fetch("" + BASE_API_URL + LOGIN_URL_PATH, requestOptions)
+        (0, utils_1.debug)("Making request to ".concat(BASE_API_URL).concat(LOGIN_URL_PATH, " with options:"));
+        (0, utils_1.debug)(JSON.stringify(requestOptions, null, 2));
+        fetch("".concat(BASE_API_URL).concat(LOGIN_URL_PATH), requestOptions)
             .then(function (res) {
             if (!payload.oneTimePassword)
                 return res;
-            utils_1.debug('Sending OTP');
-            return fetch("" + BASE_API_URL + LOGIN_URL_PATH + "/totp", requestOptions);
+            (0, utils_1.debug)('Sending OTP');
+            return fetch("".concat(BASE_API_URL).concat(LOGIN_URL_PATH, "/totp"), requestOptions);
         })
             .then(function (res) { return res.json(); })
             .then(function (res) {
             if (!res.sessionId)
                 return reject(res.statusText);
-            utils_1.debug('Login response: ', JSON.stringify(res, null, 2));
+            (0, utils_1.debug)('Login response: ', JSON.stringify(res, null, 2));
             resolve(res);
         })
             .catch(reject);

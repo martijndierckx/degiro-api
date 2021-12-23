@@ -15,12 +15,12 @@ function deleteOrderRequest(orderId, accountData, accountConfig) {
             referer: 'https://trader.degiro.nl/trader/',
         };
         // tslint:disable-next-line: max-line-length
-        var uri = "https://trader.degiro.nl/trading/secure/v5/order/" + orderId + ";jsessionid=" + accountConfig.data.sessionId + "?intAccount=" + accountData.data.intAccount + "&sessionId=" + accountConfig.data.sessionId;
-        utils_1.debug(uri, requestOptions);
+        var uri = "https://trader.degiro.nl/trading/secure/v5/order/".concat(orderId, ";jsessionid=").concat(accountConfig.data.sessionId, "?intAccount=").concat(accountData.data.intAccount, "&sessionId=").concat(accountConfig.data.sessionId);
+        (0, utils_1.debug)(uri, requestOptions);
         fetch(uri, requestOptions)
             .then(function (res) { return res.json(); })
             .then(function (res) {
-            utils_1.debug(res);
+            (0, utils_1.debug)(res);
             if (res.errors)
                 return reject(res.errors);
             resolve();

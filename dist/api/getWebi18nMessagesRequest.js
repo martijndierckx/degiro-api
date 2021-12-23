@@ -7,18 +7,18 @@ function getWebi18nMessagesRequest(lang, accountData, accountConfig) {
     return new Promise(function (resolve, reject) {
         var requestOptions = {
             headers: {
-                Cookie: "JSESSIONID=" + accountConfig.data.sessionId + ";",
+                Cookie: "JSESSIONID=".concat(accountConfig.data.sessionId, ";"),
             },
             credentials: 'include',
             referer: 'https://trader.degiro.nl/trader/',
         };
         // Do the request to get a account config data
-        var uri = accountConfig.data.i18nUrl + "messages_" + lang;
-        utils_1.debug("Making request to " + uri);
+        var uri = "".concat(accountConfig.data.i18nUrl, "messages_").concat(lang);
+        (0, utils_1.debug)("Making request to ".concat(uri));
         fetch(uri, requestOptions)
             .then(function (res) { return res.json(); })
             .then(function (res) {
-            utils_1.debug('Response:\n', JSON.stringify(res, null, 2));
+            (0, utils_1.debug)('Response:\n', JSON.stringify(res, null, 2));
             var data = res.data;
             resolve(data);
         })
