@@ -15,8 +15,8 @@ import {
   AccountInfoType,
   FavouriteProductType,
   StockType,
-  GetHistoricalOrdersOptionsType,
-  HistoricalOrdersType,
+  GetHistoricalOrdersConfigType,
+  HistoricalOrderType,
   GetNewsOptionsType,
   NewsType,
   WebSettingsType,
@@ -24,77 +24,79 @@ import {
   ConfigDictionaryType,
   i18nMessagesType,
   GetPopularStocksConfigType,
-} from '../types'
+} from "../types";
 
 /**
  * @interface DeGiroClassInterface
  */
 export interface DeGiroClassInterface {
-
   /* Session methods */
 
-  login(): Promise<AccountDataType>
+  login(): Promise<AccountDataType>;
 
-  logout(): Promise<void>
+  logout(): Promise<void>;
 
-  isLogin(options?: IsLoginOptionsType): boolean | Promise<boolean>
+  isLogin(options?: IsLoginOptionsType): boolean | Promise<boolean>;
 
-  getJSESSIONID(): string | undefined
+  getJSESSIONID(): string | undefined;
 
   /* Account methods */
 
-  getAccountConfig(sessionId: string): Promise<AccountConfigType>
+  getAccountConfig(sessionId: string): Promise<AccountConfigType>;
 
-  getAccountData(): Promise<AccountDataType>
+  getAccountData(): Promise<AccountDataType>;
 
-  getAccountState(options: GetAccountStateOptionsType): Promise<any[]>
+  getAccountState(options: GetAccountStateOptionsType): Promise<any[]>;
 
-  getAccountReports(): Promise<AccountReportsType>
+  getAccountReports(): Promise<AccountReportsType>;
 
-  getAccountInfo(): Promise<AccountInfoType>
+  getAccountInfo(): Promise<AccountInfoType>;
 
   /* Search methods */
 
-  searchProduct(options: SearchProductOptionsType): Promise<SearchProductResultType[]>
+  searchProduct(
+    options: SearchProductOptionsType
+  ): Promise<SearchProductResultType[]>;
 
   /* Cash Funds methods */
 
-  getCashFunds(): Promise<CashFoundType[]>
+  getCashFunds(): Promise<CashFoundType[]>;
 
   /* Porfolio methods */
 
-  getPortfolio(config: GetPorfolioConfigType): Promise<any[]>
+  getPortfolio(config: GetPorfolioConfigType): Promise<any[]>;
 
   /* Stocks methods */
 
-  getFavouriteProducts(): Promise<FavouriteProductType[]>
+  getFavouriteProducts(): Promise<FavouriteProductType[]>;
 
-  getPopularStocks(config: GetPopularStocksConfigType): Promise<StockType[]>
+  getPopularStocks(config: GetPopularStocksConfigType): Promise<StockType[]>;
 
   /* Orders methods */
 
-  getOrders(options: GetOrdersConfigType): Promise<GetOrdersResultType>
+  getOrders(options: GetOrdersConfigType): Promise<GetOrdersResultType>;
 
-  getHistoricalOrders(options: GetHistoricalOrdersOptionsType): Promise<HistoricalOrdersType>
+  getHistoricalOrders(
+    options: GetHistoricalOrdersConfigType
+  ): Promise<HistoricalOrderType[]>;
 
-  createOrder(order: OrderType): Promise<CreateOrderResultType>
+  createOrder(order: OrderType): Promise<CreateOrderResultType>;
 
-  executeOrder(order: OrderType, executeId: string): Promise<String>
+  executeOrder(order: OrderType, executeId: string): Promise<String>;
 
-  deleteOrder(orderId: String): Promise<void>
+  deleteOrder(orderId: String): Promise<void>;
 
   /* Miscellaneous methods */
 
-  getProductsByIds(ids: string[]): Promise<any[]>
+  getProductsByIds(ids: string[]): Promise<any[]>;
 
-  getNews(options: GetNewsOptionsType): Promise<NewsType>
+  getNews(options: GetNewsOptionsType): Promise<NewsType>;
 
-  getWebi18nMessages(lang: string): Promise<i18nMessagesType>
+  getWebi18nMessages(lang: string): Promise<i18nMessagesType>;
 
-  getWebSettings(): Promise<WebSettingsType>
+  getWebSettings(): Promise<WebSettingsType>;
 
-  getWebUserSettings(): Promise<WebUserSettingType>
+  getWebUserSettings(): Promise<WebUserSettingType>;
 
-  getConfigDictionary(): Promise<ConfigDictionaryType>
-
+  getConfigDictionary(): Promise<ConfigDictionaryType>;
 }

@@ -20,6 +20,7 @@ import { getAccountReportsRequest } from './getAccountReportsRequest'
 import { getCashFundstRequest } from './getCashFundstRequest'
 import { getPopularStocksRequest } from './getPopularStocksRequest'
 import { getPriceRequest } from './getPriceRequest'
+import { getHistoricalOrdersRequest } from './getHistoricalOrdersRequest'
 
 export {
   loginRequest,
@@ -33,6 +34,7 @@ export {
   executeOrderRequest,
   deleteOrderRequest,
   getOrdersRequest,
+  getHistoricalOrdersRequest,
   getAccountStateRequest,
   getConfigDictionaryRequest,
   getAccountInfoRequest,

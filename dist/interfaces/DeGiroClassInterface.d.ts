@@ -1,4 +1,4 @@
-import { CashFoundType, AccountConfigType, GetPorfolioConfigType, AccountDataType, SearchProductOptionsType, SearchProductResultType, OrderType, CreateOrderResultType, IsLoginOptionsType, GetOrdersConfigType, GetOrdersResultType, GetAccountStateOptionsType, AccountReportsType, AccountInfoType, FavouriteProductType, StockType, GetHistoricalOrdersOptionsType, HistoricalOrdersType, GetNewsOptionsType, NewsType, WebSettingsType, WebUserSettingType, ConfigDictionaryType, i18nMessagesType, GetPopularStocksConfigType } from '../types';
+import { CashFoundType, AccountConfigType, GetPorfolioConfigType, AccountDataType, SearchProductOptionsType, SearchProductResultType, OrderType, CreateOrderResultType, IsLoginOptionsType, GetOrdersConfigType, GetOrdersResultType, GetAccountStateOptionsType, AccountReportsType, AccountInfoType, FavouriteProductType, StockType, GetHistoricalOrdersConfigType, HistoricalOrderType, GetNewsOptionsType, NewsType, WebSettingsType, WebUserSettingType, ConfigDictionaryType, i18nMessagesType, GetPopularStocksConfigType } from "../types";
 /**
  * @interface DeGiroClassInterface
  */
@@ -18,7 +18,7 @@ export interface DeGiroClassInterface {
     getFavouriteProducts(): Promise<FavouriteProductType[]>;
     getPopularStocks(config: GetPopularStocksConfigType): Promise<StockType[]>;
     getOrders(options: GetOrdersConfigType): Promise<GetOrdersResultType>;
-    getHistoricalOrders(options: GetHistoricalOrdersOptionsType): Promise<HistoricalOrdersType>;
+    getHistoricalOrders(options: GetHistoricalOrdersConfigType): Promise<HistoricalOrderType[]>;
     createOrder(order: OrderType): Promise<CreateOrderResultType>;
     executeOrder(order: OrderType, executeId: string): Promise<String>;
     deleteOrder(orderId: String): Promise<void>;

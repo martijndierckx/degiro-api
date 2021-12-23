@@ -227,10 +227,11 @@ var DeGiro = /** @class */ (function () {
         }
         return (0, api_1.getOrdersRequest)(this.accountData, this.accountConfig, config);
     };
-    DeGiro.prototype.getHistoricalOrders = function (options) {
-        return new Promise(function (resolve, reject) {
-            reject('Method not implemented');
-        });
+    DeGiro.prototype.getHistoricalOrders = function (config) {
+        if (!this.hasSessionId()) {
+            return Promise.reject('You must log in first');
+        }
+        return (0, api_1.getHistoricalOrdersRequest)(this.accountData, this.accountConfig, config);
     };
     DeGiro.prototype.createOrder = function (order) {
         if (!this.hasSessionId()) {

@@ -15,7 +15,8 @@ export declare enum DEGIRO_API_PATHS {
     GET_ACCOUNT_REPORTS_PATH = "document/list/report",
     STOCKS_SEARCH_PATH = "v5/stocks",
     VWD_BASE_API_URL = "https://charting.vwdservices.com/hchart/",
-    VWD_GET_PRICE_PATH = "v1/deGiro/data.js"
+    VWD_GET_PRICE_PATH = "v1/deGiro/data.js",
+    GET_ORDER_HISTORY = "v4/order-history"
 }
 export declare enum DeGiroActions {
     BUY = "BUY",

@@ -21,8 +21,8 @@ import { AccountReportsType, ReportType } from './AccountReportsType'
 import { AccountInfoType } from './AccountInfoType'
 import { FavouriteProductType } from './FavouriteProductType'
 import { StockType } from './StockType'
-import { GetHistoricalOrdersOptionsType } from './GetHistoricalOrdersOptionsType'
-import { HistoricalOrdersType } from './HistoricalOrdersType'
+import { GetHistoricalOrdersConfigType } from './GetHistoricalOrdersConfigType'
+import { HistoricalOrderType } from './HistoricalOrderType'
 import { GetNewsOptionsType } from './GetNewsOptionsType'
 import { NewsType, New } from './NewsType'
 import { WebSettingsType } from './WebSettingsType'
@@ -72,8 +72,8 @@ export {
   AccountInfoType,
   FavouriteProductType,
   StockType,
-  GetHistoricalOrdersOptionsType,
-  HistoricalOrdersType,
+  GetHistoricalOrdersConfigType,
+  HistoricalOrderType,
   GetNewsOptionsType,
   NewsType,
   New,

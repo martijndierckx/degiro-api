@@ -16,6 +16,7 @@ export enum DEGIRO_API_PATHS {
   STOCKS_SEARCH_PATH = 'v5/stocks',
   VWD_BASE_API_URL = 'https://charting.vwdservices.com/hchart/',
   VWD_GET_PRICE_PATH = 'v1/deGiro/data.js',
+  GET_ORDER_HISTORY = 'v4/order-history'
 }
 
 export enum DeGiroActions {

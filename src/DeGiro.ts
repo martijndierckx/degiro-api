@@ -23,8 +23,7 @@ import {
   GetAccountStateOptionsType,
   AccountReportsType,
   AccountInfoType,
-  GetHistoricalOrdersOptionsType,
-  HistoricalOrdersType,
+  GetHistoricalOrdersConfigType,
   FavouriteProductType,
   StockType,
   GetNewsOptionsType,
@@ -34,7 +33,8 @@ import {
   i18nMessagesType,
   WebSettingsType,
   GetPopularStocksConfigType,
-  GetPriceOptionsType
+  GetPriceOptionsType,
+  HistoricalOrderType
 } from './types'
 
 // Import requests
@@ -50,6 +50,7 @@ import {
   deleteOrderRequest,
   logoutRequest,
   getOrdersRequest,
+  getHistoricalOrdersRequest,
   getAccountStateRequest,
   getConfigDictionaryRequest,
   getAccountInfoRequest,
@@ -288,10 +289,11 @@ export class DeGiro implements DeGiroClassInterface {
     return getOrdersRequest(<AccountDataType>this.accountData, <AccountConfigType>this.accountConfig, config)
   }
 
-  getHistoricalOrders(options: GetHistoricalOrdersOptionsType): Promise<HistoricalOrdersType> {
-    return new Promise((resolve, reject) => {
-      reject('Method not implemented')
-    })
+  getHistoricalOrders(config: GetHistoricalOrdersConfigType): Promise<HistoricalOrderType[]> {
+    if (!this.hasSessionId()) {
+      return Promise.reject('You must log in first')
+    }
+    return getHistoricalOrdersRequest(<AccountDataType>this.accountData, <AccountConfigType>this.accountConfig, config)
   }
 
   createOrder(order: OrderType): Promise<CreateOrderResultType> {
