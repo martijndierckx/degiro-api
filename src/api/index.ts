@@ -21,6 +21,7 @@ import { getCashFundstRequest } from './getCashFundstRequest'
 import { getPopularStocksRequest } from './getPopularStocksRequest'
 import { getPriceRequest } from './getPriceRequest'
 import { getHistoricalOrdersRequest } from './getHistoricalOrdersRequest'
+import { getTransactionsRequest } from './getTransactionsRequest'
 
 export {
   loginRequest,
@@ -46,4 +47,5 @@ export {
   getCashFundstRequest,
   getPopularStocksRequest,
   getPriceRequest,
+  getTransactionsRequest
 }

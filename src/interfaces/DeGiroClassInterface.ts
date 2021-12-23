@@ -24,6 +24,8 @@ import {
   ConfigDictionaryType,
   i18nMessagesType,
   GetPopularStocksConfigType,
+  GetTransactionsConfigType,
+  TransactionType,
 } from "../types";
 
 /**
@@ -77,8 +79,12 @@ export interface DeGiroClassInterface {
   getOrders(options: GetOrdersConfigType): Promise<GetOrdersResultType>;
 
   getHistoricalOrders(
-    options: GetHistoricalOrdersConfigType
+    config: GetHistoricalOrdersConfigType
   ): Promise<HistoricalOrderType[]>;
+
+  getTransactions(
+    config: GetTransactionsConfigType,
+  ): Promise<TransactionType[]>;
 
   createOrder(order: OrderType): Promise<CreateOrderResultType>;
 

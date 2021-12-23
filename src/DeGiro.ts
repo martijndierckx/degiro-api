@@ -34,7 +34,9 @@ import {
   WebSettingsType,
   GetPopularStocksConfigType,
   GetPriceOptionsType,
-  HistoricalOrderType
+  HistoricalOrderType,
+  GetTransactionsConfigType,
+  TransactionType
 } from './types'
 
 // Import requests
@@ -61,7 +63,8 @@ import {
   getAccountReportsRequest,
   getCashFundstRequest,
   getPopularStocksRequest,
-  getPriceRequest
+  getPriceRequest,
+  getTransactionsRequest
 } from './api'
 
 /**
@@ -282,7 +285,7 @@ export class DeGiro implements DeGiroClassInterface {
 
   /* Orders methods */
 
-  getOrders (config: GetOrdersConfigType): Promise<GetOrdersResultType> {
+  getOrders(config: GetOrdersConfigType): Promise<GetOrdersResultType> {
     if (!this.hasSessionId()) {
       return Promise.reject('You must log in first')
     }
@@ -294,6 +297,13 @@ export class DeGiro implements DeGiroClassInterface {
       return Promise.reject('You must log in first')
     }
     return getHistoricalOrdersRequest(<AccountDataType>this.accountData, <AccountConfigType>this.accountConfig, config)
+  }
+
+  getTransactions(config: GetTransactionsConfigType): Promise<TransactionType[]> {
+    if (!this.hasSessionId()) {
+      return Promise.reject('You must log in first')
+    }
+    return getTransactionsRequest(<AccountDataType>this.accountData, <AccountConfigType>this.accountConfig, config)
   }
 
   createOrder(order: OrderType): Promise<CreateOrderResultType> {

@@ -46,6 +46,8 @@ import {
   Region,
   Country,
 } from './ConfigDictionaryType'
+import { TransactionType } from './TransactionType'
+import { GetTransactionsConfigType } from './GetTransactionsConfigType'
 
 export {
   CashFoundType,
@@ -96,5 +98,8 @@ export {
 
   i18nMessagesType,
   GetPopularStocksConfigType,
-  GetPriceOptionsType
+  GetPriceOptionsType,
+  
+  GetTransactionsConfigType,
+  TransactionType
 }

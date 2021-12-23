@@ -233,6 +233,12 @@ var DeGiro = /** @class */ (function () {
         }
         return (0, api_1.getHistoricalOrdersRequest)(this.accountData, this.accountConfig, config);
     };
+    DeGiro.prototype.getTransactions = function (config) {
+        if (!this.hasSessionId()) {
+            return Promise.reject('You must log in first');
+        }
+        return (0, api_1.getTransactionsRequest)(this.accountData, this.accountConfig, config);
+    };
     DeGiro.prototype.createOrder = function (order) {
         if (!this.hasSessionId()) {
             return Promise.reject('You must log in first');

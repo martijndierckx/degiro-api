@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getPriceRequest = exports.getPopularStocksRequest = exports.getCashFundstRequest = exports.getAccountReportsRequest = exports.getWebUserSettingsRequest = exports.getWebSettingsRequest = exports.getNewsRequest = exports.getWebi18nMessagesRequest = exports.getAccountInfoRequest = exports.getConfigDictionaryRequest = exports.getAccountStateRequest = exports.getHistoricalOrdersRequest = exports.getOrdersRequest = exports.deleteOrderRequest = exports.executeOrderRequest = exports.createOrderRequest = exports.searchProductRequest = exports.getProductsByIdsRequest = exports.getPortfolioRequest = exports.getAccountDataRequest = exports.getAccountConfigRequest = exports.logoutRequest = exports.loginRequest = void 0;
+exports.getTransactionsRequest = exports.getPriceRequest = exports.getPopularStocksRequest = exports.getCashFundstRequest = exports.getAccountReportsRequest = exports.getWebUserSettingsRequest = exports.getWebSettingsRequest = exports.getNewsRequest = exports.getWebi18nMessagesRequest = exports.getAccountInfoRequest = exports.getConfigDictionaryRequest = exports.getAccountStateRequest = exports.getHistoricalOrdersRequest = exports.getOrdersRequest = exports.deleteOrderRequest = exports.executeOrderRequest = exports.createOrderRequest = exports.searchProductRequest = exports.getProductsByIdsRequest = exports.getPortfolioRequest = exports.getAccountDataRequest = exports.getAccountConfigRequest = exports.logoutRequest = exports.loginRequest = void 0;
 var login_1 = require("./login");
 Object.defineProperty(exports, "loginRequest", { enumerable: true, get: function () { return login_1.loginRequest; } });
 var logout_1 = require("./logout");
@@ -47,4 +47,6 @@ var getPriceRequest_1 = require("./getPriceRequest");
 Object.defineProperty(exports, "getPriceRequest", { enumerable: true, get: function () { return getPriceRequest_1.getPriceRequest; } });
 var getHistoricalOrdersRequest_1 = require("./getHistoricalOrdersRequest");
 Object.defineProperty(exports, "getHistoricalOrdersRequest", { enumerable: true, get: function () { return getHistoricalOrdersRequest_1.getHistoricalOrdersRequest; } });
+var getTransactionsRequest_1 = require("./getTransactionsRequest");
+Object.defineProperty(exports, "getTransactionsRequest", { enumerable: true, get: function () { return getTransactionsRequest_1.getTransactionsRequest; } });
 //# sourceMappingURL=index.js.map
