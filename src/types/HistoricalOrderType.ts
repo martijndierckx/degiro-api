@@ -10,7 +10,7 @@ export type HistoricalOrderType = {
   price: number;
   productId: number;
   size: number;
-  status: 'CONFIRMED' || 'REJECTED' || string;
+  status: 'CONFIRMED' | 'REJECTED' | string;
   stopPrice: number;
   totalTradedSize: number;
   type: number;

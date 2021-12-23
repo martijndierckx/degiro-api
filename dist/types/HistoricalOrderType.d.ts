@@ -10,6 +10,9 @@ export declare type HistoricalOrderType = {
     price: number;
     productId: number;
     size: number;
-    status: 'CONFIRMED';
+    status: 'CONFIRMED' | 'REJECTED' | string;
+    stopPrice: number;
+    totalTradedSize: number;
+    type: number;
 };
 //# sourceMappingURL=HistoricalOrderType.d.ts.map
